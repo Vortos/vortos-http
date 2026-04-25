@@ -1,0 +1,19 @@
+{
+    "name": "vortos/vortos-http",
+    "description": "Vortos HTTP kernel — routing, event dispatcher, error handling",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vortos\\Http\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.2",
+        "vortos/vortos-foundation": "^1.0",
+        "symfony/http-foundation": "^7.3",
+        "symfony/http-kernel": "^7.3",
+        "symfony/routing": "^7.3",
+        "symfony/event-dispatcher": "^7.3"
+    }
+}
