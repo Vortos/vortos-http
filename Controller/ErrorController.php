@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Vortos\Http\Controller;
 
 use Vortos\Http\Contract\PublicExceptionInterface;
@@ -35,16 +37,10 @@ class ErrorController
             ], $statusCode);
         }
 
-        $viewData = [
-            'statusCode'  => $statusCode,
-            'message'     => $message,
-            'exception'   => $exception,
-            'isDebug'     => $this->debug,
-            'codeSnippet' => $this->getCodeSnippet($exception)
-        ];
+        $isDebug     = $this->debug;
+        $codeSnippet = $this->getCodeSnippet($exception);
 
         ob_start();
-        extract($viewData, EXTR_SKIP);
         include __DIR__ . '/../View/error.html.php';
         $content = ob_get_clean();
 
