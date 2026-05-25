@@ -7,6 +7,7 @@ namespace Vortos\Http\Attribute;
 use Attribute;
 
 #[Attribute(Attribute::TARGET_CLASS)]
-class ApiController{
-    
+final class AsMiddleware
+{
+    public function __construct(public readonly int $order) {}
 }
